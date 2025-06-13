@@ -9,25 +9,11 @@
   </style>
 </head>
 <body>
-  <iframe id="dynamic-frame" src="" allowfullscreen></iframe>
-
+  <iframe id="frame" allowfullscreen></iframe>
+  <script src="config.js"></script>
   <script>
-    const iframe = document.getElementById('dynamic-frame');
-    fetch('url.txt')
-      .then(res => res.text())
-      .then(url => {
-        iframe.src = url.trim();
-      })
-      .catch(err => {
-        document.body.innerHTML = "<h1>Could not load live view. Try again later.</h1>";
-        console.error('Failed to fetch URL:', err);
-      });
-
-    // Handle dynamic resize
-    window.addEventListener('resize', () => {
-      iframe.style.height = window.innerHeight + 'px';
-      iframe.style.width = window.innerWidth + 'px';
-    });
+    // Use URL defined in config.js
+    document.getElementById('frame').src = CLOUDFLARE_URL;
   </script>
 </body>
 </html>
