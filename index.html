@@ -1,1 +1,34 @@
-<iframe src="https://someone-intake.gl.at.ply.gg:17694" style="width: 100%; height: 100vh; border: none;"></iframe>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Proxy View</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    #frame {
+      border: none;
+      width: 100%;
+      height: 100vh;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <iframe id="frame" src="http://someone-intake.gl.at.ply.gg:17694" title="Live View"></iframe>
+
+  <script>
+    const iframe = document.getElementById('frame');
+    function resizeFrame() {
+      iframe.style.height = window.innerHeight + 'px';
+      iframe.style.width = window.innerWidth + 'px';
+    }
+
+    window.addEventListener('resize', resizeFrame);
+    window.addEventListener('load', resizeFrame);
+  </script>
+</body>
+</html>
