@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Buy Our House</title>
-  <style>
-    html, body, iframe {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <script>
+    fetch('url.txt')
+      .then(res => res.text())
+      .then(url => {
+        window.location.replace(url.trim());
+      })
+      .catch(() => {
+        document.body.innerHTML = "<h1>Failed to load tunnel URL. Please try again soon.</h1>";
+      });
+  </script>
 </head>
 <body>
-  <iframe src="https://frozen-richmond-disclaimer-references.trycloudflare.com" frameborder="0" allowfullscreen></iframe>
+  <h1>Loading latest server URL...</h1>
 </body>
 </html>
