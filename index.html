@@ -1,34 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Dynamic Proxy View</title>
+  <meta charset="UTF-8" />
+  <title>Proxy to Server</title>
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-    }
-    #frame {
-      border: none;
-      width: 100%;
-      height: 100vh;
-      display: block;
-    }
+    html, body { margin: 0; padding: 0; height: 100%; }
+    iframe { border: none; width: 100%; height: 100vh; }
   </style>
 </head>
 <body>
-  <iframe id="frame" src="https://buyourhouse.duckdns.org:17694/" title="Live View"></iframe>
-
-  <script>
-    const iframe = document.getElementById('frame');
-    function resizeFrame() {
-      iframe.style.height = window.innerHeight + 'px';
-      iframe.style.width = window.innerWidth + 'px';
-    }
-
-    window.addEventListener('resize', resizeFrame);
-    window.addEventListener('load', resizeFrame);
-  </script>
+  <iframe src="https://resolution-males-photography-wishlist.trycloudflare.com" allowfullscreen></iframe>
 </body>
 </html>
