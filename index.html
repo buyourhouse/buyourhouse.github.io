@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Redirecting...</title>
+  <meta charset="UTF-8" />
+  <title>Proxy to Server</title>
+  <style>
+    html, body { margin: 0; padding: 0; height: 100%; }
+    iframe { border: none; width: 100%; height: 100vh; }
+  </style>
+</head>
+<body>
+  <iframe id="dynamic-frame" src="" allowfullscreen></iframe>
+
   <script>
+    const iframe = document.getElementById('dynamic-frame');
     fetch('url.txt')
       .then(res => res.text())
       .then(url => {
-        window.location.replace(url.trim());
+        iframe.src = url.trim();
       })
-      .catch(() => {
-        document.body.innerHTML = "<h1>Failed to load tunnel URL. Please try again soon.</h1>";
+      .catch(err => {
+        document.body.innerHTML = "<h1>Could not load live view. Try again later.</h1>";
+        console.error('Failed to fetch URL:', err);
       });
+
+    // Handle dynamic resize
+    window.addEventListener('resize', () => {
+      iframe.style.height = window.innerHeight + 'px';
+      iframe.style.width = window.innerWidth + 'px';
+    });
   </script>
-</head>
-<body>
-  <h1>Loading latest server URL...</h1>
 </body>
 </html>
